@@ -1,4 +1,4 @@
-**Customer Churn Analysis Project (SQL + Power BI)**
+**📊 Customer Churn Analysis Project (SQL + Power BI)**
 
 This project is an end-to-end Customer Churn Analysis built using:
 
@@ -27,68 +27,107 @@ Target variable → Churn (1 = Yes, 0 = No)
 ✔️ Remove Extra Spaces
 
 UPDATE customers
+
 SET customerID = TRIM(customerID),
-    gender = TRIM(gender),
-    Partner = TRIM(Partner),
-    Dependents = TRIM(Dependents),
-    PhoneService = TRIM(PhoneService),
-    MultipleLines = TRIM(MultipleLines),
-    InternetService = TRIM(InternetService),
-    OnlineSecurity = TRIM(OnlineSecurity),
-    OnlineBackup = TRIM(OnlineBackup),
-    DeviceProtection = TRIM(DeviceProtection),
-    TechSupport = TRIM(TechSupport),
-    StreamingTV = TRIM(StreamingTV),
-    StreamingMovies = TRIM(StreamingMovies),
-    Contract = TRIM(Contract),
-    PaperlessBilling = TRIM(PaperlessBilling),
-    PaymentMethod = TRIM(PaymentMethod),
+
+gender = TRIM(gender),
+
+ Partner = TRIM(Partner),
+ 
+ Dependents = TRIM(Dependents),
+  
+ PhoneService = TRIM(PhoneService),
+ 
+ MultipleLines = TRIM(MultipleLines),
+ 
+ InternetService = TRIM(InternetService),
+    
+ OnlineSecurity = TRIM(OnlineSecurity),
+ 
+ OnlineBackup = TRIM(OnlineBackup),
+ 
+ DeviceProtection = TRIM(DeviceProtection),
+ 
+TechSupport = TRIM(TechSupport),
+
+StreamingTV = TRIM(StreamingTV),
+
+StreamingMovies = TRIM(StreamingMovies),
+
+Contract = TRIM(Contract),
+
+PaperlessBilling = TRIM(PaperlessBilling),
+ 
+PaymentMethod = TRIM(PaymentMethod),
 
 ✔️ Fix TotalCharges (empty → NULL, convert to decimal)
 
    UPDATE customers SET TotalCharges = NULL WHERE TRIM(TotalCharges) = '';
+   
    UPDATE customers SET TotalCharges = NULL WHERE TotalCharges REGEXP '[^0-9\.]';
 
    ALTER TABLE customers
+   
    MODIFY COLUMN TotalCharges DECIMAL(10,2);
 
    **📌 3. SQL Analysis Queries**
 
  🔹 Total Customers, Churn Count & Churn Rate
  
-  SELECT 
-      COUNT(*) AS total_customers,
-      SUM(Churn) AS churned_customers,
-      ROUND((SUM(Churn) / COUNT(*)) * 100, 2) AS churn_rate
-   FROM customers;
+ SELECT 
+  
+  COUNT(*) AS total_customers,
+ 
+  SUM(Churn) AS churned_customers,
+ 
+  ROUND((SUM(Churn) / COUNT(*)) * 100, 2) AS churn_rate
+ 
+ FROM customers;
 
 🔹Churn by Gender
 
-   SELECT 
-    gender,
-    COUNT(*) AS total,
-    SUM(Churn) AS churned,
-    ROUND((SUM(Churn) / COUNT(*)) * 100, 2) AS churn_rate
+SELECT 
+   
+  gender,
+  
+  COUNT(*) AS total,
+  
+  SUM(Churn) AS churned,
+  
+  ROUND((SUM(Churn) / COUNT(*)) * 100, 2) AS churn_rate
+  
 FROM customers
+
 GROUP BY gender;
 
 🔹 Churn by Contract Type
 
-   SELECT 
-    Contract,
-    COUNT(*) AS total_customers,
-    SUM(Churn) AS churned,
-    ROUND((SUM(Churn) / COUNT(*)) * 100, 2) AS churn_rate
+SELECT 
+   
+ Contract
+    
+ COUNT(*) AS total_customers,
+    
+ SUM(Churn) AS churned,
+    
+ ROUND((SUM(Churn) / COUNT(*)) * 100, 2) AS churn_rate
+    
 FROM customers
+
 GROUP BY Contract
+
 ORDER BY churn_rate DESC;
 
 🔹 Avg Monthly Charges (Churn vs Non-Churn)
 
   SELECT 
-    Churn,
-    ROUND(AVG(MonthlyCharges), 2) AS avg_monthly_charge
+  
+   Churn,
+    
+   ROUND(AVG(MonthlyCharges), 2) AS avg_monthly_charge
+    
 FROM customers
+
 GROUP BY Churn;
 
 
@@ -155,7 +194,10 @@ Average Monthly Charges
 This project demonstrates:
 
 ✔ Real-world data cleaning techniques
+
 ✔ SQL analytics for churn prediction
+
 ✔ A complete Power BI business dashboard
+
 ✔ Actionable insights for retention strategy
 
