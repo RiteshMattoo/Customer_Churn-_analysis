@@ -131,7 +131,7 @@ FROM customers
 GROUP BY Churn;
 
 
-##📌 4. Power BI Dashboard
+## 📌 4. Power BI Dashboard
 
 This project includes an interactive Customer Churn Dashboard with:
 
@@ -189,7 +189,7 @@ Average Monthly Charges
 
 5.Female and male churn rates are nearly equal
 
-## 🚀 Conclusion**
+## 🚀 Conclusion
 
 This project demonstrates:
 
