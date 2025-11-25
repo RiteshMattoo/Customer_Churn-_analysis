@@ -1,4 +1,4 @@
-**📊 Customer Churn Analysis Project (SQL + Power BI)**
+### 📊 Customer Churn Analysis Project (SQL + Power BI)
 
    This project is an end-to-end Customer Churn Analysis built using:
 
@@ -10,7 +10,7 @@
 
   The goal is to identify what factors influence customer churn and present insights using interactive dashboards.
 
-**📌 1. Dataset Description**
+### 📌 1. Dataset Description
 
  The dataset contains 7,043 customer records with fields like:
 
@@ -22,7 +22,7 @@
 
  Target variable → Churn (1 = Yes, 0 = No)
 
-**📌 2. SQL Data Cleaning (MySQL)**
+### 📌 2. SQL Data Cleaning (MySQL)
 
  ✔️ Remove Extra Spaces
 
@@ -131,7 +131,7 @@ FROM customers
 GROUP BY Churn;
 
 
-**📌 4. Power BI Dashboard**
+###📌 4. Power BI Dashboard
 
 This project includes an interactive Customer Churn Dashboard with:
 
@@ -158,26 +158,26 @@ Average Monthly Charges
 📊 Senior Citizen vs Churn
 
 
-**📸 Sample Screenshots**
+### 📸 Sample Screenshots
 
-###Dashboard Overview
+#Dashboard Overview
 
 ![Dashboard](PowerBI/Screenshot 1.jpeg)
 
-###Male Vs Female churn rate
+# Male Vs Female churn rate
 
 ![Male Vs Female Churn Rate](PowerBI/Screenshot 2.jpeg)
 
-### Churn by Contract Type
+# Churn by Contract Type
 
 ![Churn By Contract Type](PowerBI/Screenshot 3.jpeg)
 
-### Tenure Distribution
+# Tenure Distribution
 
 ![Tenure Distribution](PowerBI/Screenshot 4.jpeg)
 
 
-**📚 Key Insights from the Dashboard**
+### 📚 Key Insights from the Dashboard
 
 1.Customers with Month-to-Month contracts churn the most
 
@@ -189,7 +189,7 @@ Average Monthly Charges
 
 5.Female and male churn rates are nearly equal
 
-**🚀 Conclusion**
+### 🚀 Conclusion**
 
 This project demonstrates:
 
